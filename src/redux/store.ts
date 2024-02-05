@@ -4,7 +4,6 @@ import pokemonReducer from './slices/pokemonSlice';
 const store = configureStore({
   reducer: {
     pokemon: pokemonReducer,
-    // Add other reducers if needed
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

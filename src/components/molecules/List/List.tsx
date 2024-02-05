@@ -46,7 +46,7 @@ const PokemonListComponent: React.FC<{
   const [loadingMore, setLoadingMore] = useState(false);
 
   useEffect(() => {
-    //TODO : fix the TS rules
+    //TODO: fix the TS rules
     // @ts-ignore
     dispatch(fetchPokemonList(25, 0));
   }, [dispatch]);
@@ -54,7 +54,7 @@ const PokemonListComponent: React.FC<{
   const handleEndReached = () => {
     if (!loadingMore) {
       setLoadingMore(true);
-      //TODO : fix the TS rules
+      //TODO: fix the TS rules
       // @ts-ignore
       dispatch(fetchPokemonList(25, pokemonList.length)).then(() => {
         setLoadingMore(false);
@@ -74,7 +74,7 @@ const PokemonListComponent: React.FC<{
         contentContainerStyle={styles.listContainer}
         onEndReached={handleEndReached}
         onEndReachedThreshold={0.1}
-        //TODO : fix the TS rules
+        //TODO: fix the TS rules
         // @ts-ignore
         ListFooterComponent={
           loadingMore && (

@@ -39,7 +39,8 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({
               source={uri}
               style={{width, height, borderRadius: width / 2, ...imageStyle}}
               onLoad={onLoad}
-              //TODO : fix the TS rules
+              //TODO: fix the TS rules
+              // @ts-ignore
               onError={onError}
             />
           ) : typeof uri === 'string' ? (
@@ -55,7 +56,8 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({
               <Image
                 source={{uri}}
                 style={{width, height, ...imageStyle}}
-                //TODO : fix the TS rules
+                //TODO: fix the TS rules
+                // @ts-ignore
                 onError={onError}
                 onLoad={onLoad}
               />
@@ -64,7 +66,8 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({
             <Image
               source={{uri: uri.uri}}
               style={{width, height, ...imageStyle}}
-              //TODO : fix the TS rules
+              //TODO: fix the TS rules
+              // @ts-ignore
               onError={onError}
               onLoad={onLoad}
             />

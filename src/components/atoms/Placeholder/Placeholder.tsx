@@ -10,6 +10,7 @@ const Placeholder: React.FC<PlaceholderProps> = ({width, height}) => (
   <ShimmerPlaceholder
     style={{width, height, borderRadius: width / 2}}
     //TODO : fix the TS rules
+    // @ts-ignore
     autoRun
   />
 );

@@ -48,7 +48,7 @@ const AppNavigator: React.FC = () => {
           name="HomeTab"
           component={HomeTab}
           options={{
-            //TODO : fix the TS rules
+            //TODO: fix the TS rules
             tabBarIcon: ({size, focused}) => (
               <Icon
                 name="home-outline"
@@ -62,7 +62,7 @@ const AppNavigator: React.FC = () => {
           name="Compare"
           component={ComparePage}
           options={{
-            //TODO : fix the TS rules
+            //TODO: fix the TS rules
             tabBarIcon: ({size, focused}) => (
               <Icon
                 name="podium-outline"
