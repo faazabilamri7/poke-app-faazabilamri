@@ -16,6 +16,8 @@ export interface PokemonDetail {
     stat: {name: string};
   }>;
   abilities: Array<{
+    name: string;
+    effect_entries: any;
     ability: {name: string};
     is_hidden: boolean;
     slot: number;

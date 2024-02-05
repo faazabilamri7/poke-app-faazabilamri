@@ -48,7 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-jest", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:29.7.0"],\
             ["eslint", "npm:8.56.0"],\
             ["expo", "npm:49.0.22"],\
-            ["expo-app-loading", "npm:2.2.1"],\
+            ["expo-app-loading", "npm:2.1.1"],\
             ["expo-font", "virtual:944ec5408c9b8be400c0dd4dd6e5db1863363e4f7cafb85971296c029cf472b0061df50868a1e66ce73c70381e560c6edbd0036029bfa22946cad20b2fbaa3bc#npm:11.4.0"],\
             ["jest", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:29.7.0"],\
             ["prettier", "npm:2.8.8"],\
@@ -60,6 +60,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-native-paper", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:5.12.3"],\
             ["react-native-safe-area-context", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:4.9.0"],\
             ["react-native-screens", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:3.29.0"],\
+            ["react-native-svg", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:13.9.0"],\
             ["react-native-vector-icons", "npm:10.0.3"],\
             ["react-redux", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:9.1.0"],\
             ["react-test-renderer", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:18.2.0"],\
@@ -4721,14 +4722,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@expo/config", [\
-        ["npm:8.0.5", {\
-          "packageLocation": "./.yarn/cache/@expo-config-npm-8.0.5-3b1397a95b-1755cbbec2.zip/node_modules/@expo/config/",\
+        ["npm:7.0.3", {\
+          "packageLocation": "./.yarn/cache/@expo-config-npm-7.0.3-02fba8f65c-035584a459.zip/node_modules/@expo/config/",\
           "packageDependencies": [\
-            ["@expo/config", "npm:8.0.5"],\
+            ["@expo/config", "npm:7.0.3"],\
             ["@babel/code-frame", "npm:7.10.4"],\
-            ["@expo/config-plugins", "npm:6.0.2"],\
-            ["@expo/config-types", "npm:48.0.0"],\
-            ["@expo/json-file", "npm:8.3.0"],\
+            ["@expo/config-plugins", "npm:5.0.4"],\
+            ["@expo/config-types", "npm:47.0.0"],\
+            ["@expo/json-file", "npm:8.2.36"],\
             ["getenv", "npm:1.0.0"],\
             ["glob", "npm:7.1.6"],\
             ["require-from-string", "npm:2.0.2"],\
@@ -4759,13 +4760,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@expo/config-plugins", [\
-        ["npm:6.0.2", {\
-          "packageLocation": "./.yarn/cache/@expo-config-plugins-npm-6.0.2-df2855e295-2c689f767d.zip/node_modules/@expo/config-plugins/",\
+        ["npm:5.0.4", {\
+          "packageLocation": "./.yarn/cache/@expo-config-plugins-npm-5.0.4-93b85148ee-9fc5e19a92.zip/node_modules/@expo/config-plugins/",\
           "packageDependencies": [\
-            ["@expo/config-plugins", "npm:6.0.2"],\
-            ["@expo/config-types", "npm:48.0.0"],\
-            ["@expo/json-file", "npm:8.2.37"],\
-            ["@expo/plist", "npm:0.0.20"],\
+            ["@expo/config-plugins", "npm:5.0.4"],\
+            ["@expo/config-types", "npm:47.0.0"],\
+            ["@expo/json-file", "npm:8.2.36"],\
+            ["@expo/plist", "npm:0.0.18"],\
             ["@expo/sdk-runtime-versions", "npm:1.0.0"],\
             ["@react-native/normalize-color", "npm:2.1.0"],\
             ["chalk", "npm:4.1.2"],\
@@ -4805,10 +4806,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@expo/config-types", [\
-        ["npm:48.0.0", {\
-          "packageLocation": "./.yarn/cache/@expo-config-types-npm-48.0.0-c3ff38d525-11c4b0bb5c.zip/node_modules/@expo/config-types/",\
+        ["npm:47.0.0", {\
+          "packageLocation": "./.yarn/cache/@expo-config-types-npm-47.0.0-3504d78d76-bb26456bed.zip/node_modules/@expo/config-types/",\
           "packageDependencies": [\
-            ["@expo/config-types", "npm:48.0.0"]\
+            ["@expo/config-types", "npm:47.0.0"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -4918,6 +4919,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@expo/json-file", [\
+        ["npm:8.2.36", {\
+          "packageLocation": "./.yarn/cache/@expo-json-file-npm-8.2.36-b21cfd7248-37ce80b347.zip/node_modules/@expo/json-file/",\
+          "packageDependencies": [\
+            ["@expo/json-file", "npm:8.2.36"],\
+            ["@babel/code-frame", "npm:7.10.4"],\
+            ["json5", "npm:1.0.2"],\
+            ["write-file-atomic", "npm:2.4.3"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:8.2.37", {\
           "packageLocation": "./.yarn/cache/@expo-json-file-npm-8.2.37-ca1e62c2c0-f04e71654c.zip/node_modules/@expo/json-file/",\
           "packageDependencies": [\
@@ -5001,6 +5012,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@expo/plist", [\
+        ["npm:0.0.18", {\
+          "packageLocation": "./.yarn/cache/@expo-plist-npm-0.0.18-16bd3d6339-42f5743fcd.zip/node_modules/@expo/plist/",\
+          "packageDependencies": [\
+            ["@expo/plist", "npm:0.0.18"],\
+            ["@xmldom/xmldom", "npm:0.7.13"],\
+            ["base64-js", "npm:1.5.1"],\
+            ["xmlbuilder", "npm:14.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:0.0.20", {\
           "packageLocation": "./.yarn/cache/@expo-plist-npm-0.0.20-ddaf16fcad-74dea791f8.zip/node_modules/@expo/plist/",\
           "packageDependencies": [\
@@ -5013,10 +5034,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@expo/prebuild-config", [\
-        ["npm:6.0.1", {\
-          "packageLocation": "./.yarn/cache/@expo-prebuild-config-npm-6.0.1-bdb3e4a334-81ea222fe6.zip/node_modules/@expo/prebuild-config/",\
+        ["npm:5.0.7", {\
+          "packageLocation": "./.yarn/cache/@expo-prebuild-config-npm-5.0.7-156e9fd77b-f5c2d9c698.zip/node_modules/@expo/prebuild-config/",\
           "packageDependencies": [\
-            ["@expo/prebuild-config", "npm:6.0.1"]\
+            ["@expo/prebuild-config", "npm:5.0.7"]\
           ],\
           "linkType": "SOFT"\
         }],\
@@ -5026,29 +5047,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@expo/prebuild-config", "npm:6.2.6"]\
           ],\
           "linkType": "SOFT"\
-        }],\
-        ["virtual:a56ebb374c831d258290147a9267d2302d099aa9e22c9dfaa168dd28d674c931a699ff50c6ff58db79d63cd6185e60b3ea33844afc703e0e519f87d3852369e3#npm:6.0.1", {\
-          "packageLocation": "./.yarn/__virtual__/@expo-prebuild-config-virtual-d587163d19/0/cache/@expo-prebuild-config-npm-6.0.1-bdb3e4a334-81ea222fe6.zip/node_modules/@expo/prebuild-config/",\
-          "packageDependencies": [\
-            ["@expo/prebuild-config", "virtual:a56ebb374c831d258290147a9267d2302d099aa9e22c9dfaa168dd28d674c931a699ff50c6ff58db79d63cd6185e60b3ea33844afc703e0e519f87d3852369e3#npm:6.0.1"],\
-            ["@expo/config", "npm:8.0.5"],\
-            ["@expo/config-plugins", "npm:6.0.2"],\
-            ["@expo/config-types", "npm:48.0.0"],\
-            ["@expo/image-utils", "npm:0.3.22"],\
-            ["@expo/json-file", "npm:8.3.0"],\
-            ["@types/expo-modules-autolinking", null],\
-            ["debug", "virtual:5506c369f7d205cc727e8f2875616dc0244b99710d92b1bad22ac883508e7a91e51874d9b6c2a625bec078bdd53505d75f79e9c1a0dce52df9bea20420686aaf#npm:4.3.4"],\
-            ["expo-modules-autolinking", null],\
-            ["fs-extra", "npm:9.1.0"],\
-            ["resolve-from", "npm:5.0.0"],\
-            ["semver", "npm:7.3.2"],\
-            ["xml2js", "npm:0.4.23"]\
-          ],\
-          "packagePeers": [\
-            "@types/expo-modules-autolinking",\
-            "expo-modules-autolinking"\
-          ],\
-          "linkType": "HARD"\
         }],\
         ["virtual:b0a193350cd8678818bff55566eac2303167bb3b2d10ac1a88317258803ed680996db2ee74789f0a64b2d2e67fc4a3a3f5f57b038805dad143a5b53d378bda11#npm:6.2.6", {\
           "packageLocation": "./.yarn/__virtual__/@expo-prebuild-config-virtual-84ec2e1f8c/0/cache/@expo-prebuild-config-npm-6.2.6-153dfe8737-ebb83bfba2.zip/node_modules/@expo/prebuild-config/",\
@@ -5066,6 +5064,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["resolve-from", "npm:5.0.0"],\
             ["semver", "npm:7.5.3"],\
             ["xml2js", "npm:0.6.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/expo-modules-autolinking",\
+            "expo-modules-autolinking"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:fd73b01229ef9d1dcc43a757b1be9bcb886213dcb5bb86b8dd146f4cb3fb2a7699b1a04a3fa9ce325c3c9b0c6e608f619d9f2efd2c2a6c8cc2840a96d5ed3da6#npm:5.0.7", {\
+          "packageLocation": "./.yarn/__virtual__/@expo-prebuild-config-virtual-50d6a4726e/0/cache/@expo-prebuild-config-npm-5.0.7-156e9fd77b-f5c2d9c698.zip/node_modules/@expo/prebuild-config/",\
+          "packageDependencies": [\
+            ["@expo/prebuild-config", "virtual:fd73b01229ef9d1dcc43a757b1be9bcb886213dcb5bb86b8dd146f4cb3fb2a7699b1a04a3fa9ce325c3c9b0c6e608f619d9f2efd2c2a6c8cc2840a96d5ed3da6#npm:5.0.7"],\
+            ["@expo/config", "npm:7.0.3"],\
+            ["@expo/config-plugins", "npm:5.0.4"],\
+            ["@expo/config-types", "npm:47.0.0"],\
+            ["@expo/image-utils", "npm:0.3.22"],\
+            ["@expo/json-file", "npm:8.2.36"],\
+            ["@types/expo-modules-autolinking", null],\
+            ["debug", "virtual:5506c369f7d205cc727e8f2875616dc0244b99710d92b1bad22ac883508e7a91e51874d9b6c2a625bec078bdd53505d75f79e9c1a0dce52df9bea20420686aaf#npm:4.3.4"],\
+            ["expo-modules-autolinking", null],\
+            ["fs-extra", "npm:9.1.0"],\
+            ["resolve-from", "npm:5.0.0"],\
+            ["semver", "npm:7.3.2"],\
+            ["xml2js", "npm:0.4.23"]\
           ],\
           "packagePeers": [\
             "@types/expo-modules-autolinking",\
@@ -7826,6 +7847,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["boolbase", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/boolbase-npm-1.0.0-965fe9af6d-3e25c80ef6.zip/node_modules/boolbase/",\
+          "packageDependencies": [\
+            ["boolbase", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["bplist-creator", [\
         ["npm:0.1.0", {\
           "packageLocation": "./.yarn/cache/bplist-creator-npm-0.1.0-f194332b98-d4ccd88ea1.zip/node_modules/bplist-creator/",\
@@ -8644,6 +8674,40 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["css-select", [\
+        ["npm:5.1.0", {\
+          "packageLocation": "./.yarn/cache/css-select-npm-5.1.0-9365a79de5-2772c049b1.zip/node_modules/css-select/",\
+          "packageDependencies": [\
+            ["css-select", "npm:5.1.0"],\
+            ["boolbase", "npm:1.0.0"],\
+            ["css-what", "npm:6.1.0"],\
+            ["domhandler", "npm:5.0.3"],\
+            ["domutils", "npm:3.1.0"],\
+            ["nth-check", "npm:2.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["css-tree", [\
+        ["npm:1.1.3", {\
+          "packageLocation": "./.yarn/cache/css-tree-npm-1.1.3-9c46f35513-79f9b81803.zip/node_modules/css-tree/",\
+          "packageDependencies": [\
+            ["css-tree", "npm:1.1.3"],\
+            ["mdn-data", "npm:2.0.14"],\
+            ["source-map", "npm:0.6.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["css-what", [\
+        ["npm:6.1.0", {\
+          "packageLocation": "./.yarn/cache/css-what-npm-6.1.0-57f751efbb-b975e547e1.zip/node_modules/css-what/",\
+          "packageDependencies": [\
+            ["css-what", "npm:6.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["csstype", [\
         ["npm:3.1.3", {\
           "packageLocation": "./.yarn/cache/csstype-npm-3.1.3-e9a1c85013-8db785cc92.zip/node_modules/csstype/",\
@@ -8984,6 +9048,49 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["dom-serializer", [\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/dom-serializer-npm-2.0.0-378ebc7200-cd1810544f.zip/node_modules/dom-serializer/",\
+          "packageDependencies": [\
+            ["dom-serializer", "npm:2.0.0"],\
+            ["domelementtype", "npm:2.3.0"],\
+            ["domhandler", "npm:5.0.3"],\
+            ["entities", "npm:4.5.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["domelementtype", [\
+        ["npm:2.3.0", {\
+          "packageLocation": "./.yarn/cache/domelementtype-npm-2.3.0-02de7cbfba-ee837a318f.zip/node_modules/domelementtype/",\
+          "packageDependencies": [\
+            ["domelementtype", "npm:2.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["domhandler", [\
+        ["npm:5.0.3", {\
+          "packageLocation": "./.yarn/cache/domhandler-npm-5.0.3-3ede73dc10-0f58f4a6af.zip/node_modules/domhandler/",\
+          "packageDependencies": [\
+            ["domhandler", "npm:5.0.3"],\
+            ["domelementtype", "npm:2.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["domutils", [\
+        ["npm:3.1.0", {\
+          "packageLocation": "./.yarn/cache/domutils-npm-3.1.0-66c92ef7eb-e5757456dd.zip/node_modules/domutils/",\
+          "packageDependencies": [\
+            ["domutils", "npm:3.1.0"],\
+            ["dom-serializer", "npm:2.0.0"],\
+            ["domelementtype", "npm:2.3.0"],\
+            ["domhandler", "npm:5.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["dotenv", [\
         ["npm:16.0.3", {\
           "packageLocation": "./.yarn/cache/dotenv-npm-16.0.3-4cc29121dc-afcf03f373.zip/node_modules/dotenv/",\
@@ -9079,6 +9186,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["end-of-stream", "npm:1.4.4"],\
             ["once", "npm:1.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["entities", [\
+        ["npm:4.5.0", {\
+          "packageLocation": "./.yarn/cache/entities-npm-4.5.0-7cdb83b832-853f8ebd5b.zip/node_modules/entities/",\
+          "packageDependencies": [\
+            ["entities", "npm:4.5.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9794,11 +9910,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["expo-app-loading", [\
-        ["npm:2.2.1", {\
-          "packageLocation": "./.yarn/cache/expo-app-loading-npm-2.2.1-2917bbc479-362f69c419.zip/node_modules/expo-app-loading/",\
+        ["npm:2.1.1", {\
+          "packageLocation": "./.yarn/cache/expo-app-loading-npm-2.1.1-6a51e80782-e3fb2973bf.zip/node_modules/expo-app-loading/",\
           "packageDependencies": [\
-            ["expo-app-loading", "npm:2.2.1"],\
-            ["expo-splash-screen", "virtual:2917bbc479148ed28171f3e8bb880cc0ae107356aff600265ce44201fef4596634e96f124ca01d20dd48790ead534aff6d3b48411c91e6c888d3ed6c1b4ca3a2#npm:0.18.2"]\
+            ["expo-app-loading", "npm:2.1.1"],\
+            ["expo-splash-screen", "virtual:6a51e8078203cd58b8da9cc331e5f2254fe8136ebf67172cef9dd913b9577eddbd9180ff3a502e3e74a44515a0465c107103f14e18ad4ea8f86e4b5a6715085b#npm:0.17.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9989,19 +10105,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["expo-splash-screen", [\
-        ["npm:0.18.2", {\
-          "packageLocation": "./.yarn/unplugged/expo-splash-screen-virtual-a56ebb374c/node_modules/expo-splash-screen/",\
+        ["npm:0.17.5", {\
+          "packageLocation": "./.yarn/unplugged/expo-splash-screen-virtual-fd73b01229/node_modules/expo-splash-screen/",\
           "packageDependencies": [\
-            ["expo-splash-screen", "npm:0.18.2"]\
+            ["expo-splash-screen", "npm:0.17.5"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:2917bbc479148ed28171f3e8bb880cc0ae107356aff600265ce44201fef4596634e96f124ca01d20dd48790ead534aff6d3b48411c91e6c888d3ed6c1b4ca3a2#npm:0.18.2", {\
-          "packageLocation": "./.yarn/unplugged/expo-splash-screen-virtual-a56ebb374c/node_modules/expo-splash-screen/",\
+        ["virtual:6a51e8078203cd58b8da9cc331e5f2254fe8136ebf67172cef9dd913b9577eddbd9180ff3a502e3e74a44515a0465c107103f14e18ad4ea8f86e4b5a6715085b#npm:0.17.5", {\
+          "packageLocation": "./.yarn/unplugged/expo-splash-screen-virtual-fd73b01229/node_modules/expo-splash-screen/",\
           "packageDependencies": [\
-            ["expo-splash-screen", "virtual:2917bbc479148ed28171f3e8bb880cc0ae107356aff600265ce44201fef4596634e96f124ca01d20dd48790ead534aff6d3b48411c91e6c888d3ed6c1b4ca3a2#npm:0.18.2"],\
+            ["expo-splash-screen", "virtual:6a51e8078203cd58b8da9cc331e5f2254fe8136ebf67172cef9dd913b9577eddbd9180ff3a502e3e74a44515a0465c107103f14e18ad4ea8f86e4b5a6715085b#npm:0.17.5"],\
             ["@expo/configure-splash-screen", "npm:0.6.0"],\
-            ["@expo/prebuild-config", "virtual:a56ebb374c831d258290147a9267d2302d099aa9e22c9dfaa168dd28d674c931a699ff50c6ff58db79d63cd6185e60b3ea33844afc703e0e519f87d3852369e3#npm:6.0.1"],\
+            ["@expo/prebuild-config", "virtual:fd73b01229ef9d1dcc43a757b1be9bcb886213dcb5bb86b8dd146f4cb3fb2a7699b1a04a3fa9ce325c3c9b0c6e608f619d9f2efd2c2a6c8cc2840a96d5ed3da6#npm:5.0.7"],\
             ["@types/expo", null],\
             ["expo", null]\
           ],\
@@ -12473,6 +12589,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["json5", [\
+        ["npm:1.0.2", {\
+          "packageLocation": "./.yarn/cache/json5-npm-1.0.2-9607f93e30-866458a8c5.zip/node_modules/json5/",\
+          "packageDependencies": [\
+            ["json5", "npm:1.0.2"],\
+            ["minimist", "npm:1.2.8"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:2.2.3", {\
           "packageLocation": "./.yarn/cache/json5-npm-2.2.3-9962c55073-2a7436a933.zip/node_modules/json5/",\
           "packageDependencies": [\
@@ -12904,6 +13028,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/md5hex-npm-1.0.0-400e86e4a4-eabca53391.zip/node_modules/md5hex/",\
           "packageDependencies": [\
             ["md5hex", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["mdn-data", [\
+        ["npm:2.0.14", {\
+          "packageLocation": "./.yarn/cache/mdn-data-npm-2.0.14-0acd669f0d-9d0128ed42.zip/node_modules/mdn-data/",\
+          "packageDependencies": [\
+            ["mdn-data", "npm:2.0.14"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13739,6 +13872,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["npm-run-path", "npm:4.0.1"],\
             ["path-key", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["nth-check", [\
+        ["npm:2.1.1", {\
+          "packageLocation": "./.yarn/cache/nth-check-npm-2.1.1-f97afc8169-5afc3dafcd.zip/node_modules/nth-check/",\
+          "packageDependencies": [\
+            ["nth-check", "npm:2.1.1"],\
+            ["boolbase", "npm:1.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -14802,7 +14945,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["point-in-polygon", "npm:1.1.0"],\
             ["react", "npm:18.2.0"],\
             ["react-native", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:0.73.3"],\
-            ["react-native-svg", null]\
+            ["react-native-svg", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:13.9.0"]\
           ],\
           "packagePeers": [\
             "@types/react-native-svg",\
@@ -15036,6 +15179,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/react-native",\
             "react-native"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-native-svg", [\
+        ["npm:13.9.0", {\
+          "packageLocation": "./.yarn/unplugged/react-native-svg-virtual-a734bb1307/node_modules/react-native-svg/",\
+          "packageDependencies": [\
+            ["react-native-svg", "npm:13.9.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:13.9.0", {\
+          "packageLocation": "./.yarn/unplugged/react-native-svg-virtual-a734bb1307/node_modules/react-native-svg/",\
+          "packageDependencies": [\
+            ["react-native-svg", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:13.9.0"],\
+            ["@types/react", "npm:18.2.51"],\
+            ["@types/react-native", null],\
+            ["css-select", "npm:5.1.0"],\
+            ["css-tree", "npm:1.1.3"],\
+            ["react", "npm:18.2.0"],\
+            ["react-native", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:0.73.3"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-native",\
+            "@types/react",\
+            "react-native",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15403,7 +15574,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-jest", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:29.7.0"],\
             ["eslint", "npm:8.56.0"],\
             ["expo", "npm:49.0.22"],\
-            ["expo-app-loading", "npm:2.2.1"],\
+            ["expo-app-loading", "npm:2.1.1"],\
             ["expo-font", "virtual:944ec5408c9b8be400c0dd4dd6e5db1863363e4f7cafb85971296c029cf472b0061df50868a1e66ce73c70381e560c6edbd0036029bfa22946cad20b2fbaa3bc#npm:11.4.0"],\
             ["jest", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:29.7.0"],\
             ["prettier", "npm:2.8.8"],\
@@ -15415,6 +15586,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-native-paper", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:5.12.3"],\
             ["react-native-safe-area-context", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:4.9.0"],\
             ["react-native-screens", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:3.29.0"],\
+            ["react-native-svg", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:13.9.0"],\
             ["react-native-vector-icons", "npm:10.0.3"],\
             ["react-redux", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:9.1.0"],\
             ["react-test-renderer", "virtual:7491853b52f8b79a02ec6df181b3e8ab4e198457b5ceb24d3867017a4e9e529e7ec333cdbbab9413420dd666b38a258f3811ff75398925e909a91ef2ef7989f8#npm:18.2.0"],\

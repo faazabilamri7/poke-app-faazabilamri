@@ -1,4 +1,3 @@
-// styles.ts
 import {StyleSheet} from 'react-native';
 import {customTheme} from '../../theme/customTheme';
 

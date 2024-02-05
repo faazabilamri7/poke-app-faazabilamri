@@ -1,12 +1,13 @@
-// ComparePage.tsx
 import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
   TouchableOpacity,
   Modal,
-  FlatList,
   Button,
+  ScrollView,
+  SafeAreaView,
+  ActivityIndicator,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../redux/store';
@@ -16,8 +17,16 @@ import {
   clearSelectedComparePokemon,
   fetchPokemonDetails2,
   fetchPokemonDetails1,
+  setLoadingPokemonDetails1,
+  setLoadingPokemonDetails2,
 } from '../../redux/slices/pokemonSlice';
-import {fetchPokemonDetails} from '../../redux/slices/pokemonSlice'; // Import the action
+import {BarChart} from 'react-native-chart-kit';
+import {Header, Placeholder, PokemonListComponent} from '../../components';
+import {capitalizeAndSpace} from '../../helper/capitalizeAndSpace';
+import styles from './styles';
+import Icon from 'react-native-vector-icons/Ionicons';
+import ImageLoader from '../../components/atoms/ImageLoader/ImageLoader';
+import {customTheme} from '../../theme/customTheme';
 
 const ComparePage: React.FC = () => {
   const dispatch = useDispatch();
@@ -26,145 +35,263 @@ const ComparePage: React.FC = () => {
     selectedDetailPokemon1,
     selectedDetailPokemon2,
     selectedPokemon2,
-    list,
+    loadingPokemonDetails1,
+    loadingPokemonDetails2,
   } = useSelector((state: RootState) => state.pokemon);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [details1, setDetails1] = useState(null);
-  const [details2, setDetails2] = useState(null);
+
+  const [isDialog1Open, setIsDialog1Open] = useState(false);
+  const [isDialog2Open, setIsDialog2Open] = useState(false);
 
   useEffect(() => {
-    // const fetchDetails1 = async ({id}: any) => {
-    //   try {
-    //     const details = await dispatch(fetchPokemonDetails1(id));
-    //     setDetails1(details);
-    //   } catch (error) {
-    //     console.error('Error fetching Pokemon details:', error);
-    //   }
-    // };
+    const fetchData = async () => {
+      if (selectedPokemon1) {
+        dispatch(setLoadingPokemonDetails1(true));
+        try {
+          //TODO: Fix the TS Rules
+          // @ts-ignore
+          await dispatch(fetchPokemonDetails1(selectedPokemon1.id));
+        } catch (error) {
+          console.error(
+            'Error fetching Pokemon details for first Pokemon:',
+            error,
+          );
+        } finally {
+          dispatch(setLoadingPokemonDetails1(false));
+        }
+      }
 
-    // const fetchDetails2 = async ({id}: any) => {
-    //   try {
-    //     const details = await dispatch(fetchPokemonDetails2(id));
-    //     setDetails2(details);
-    //   } catch (error) {
-    //     console.error('Error fetching Pokemon details:', error);
-    //   }
-    // };
+      if (selectedPokemon2) {
+        dispatch(setLoadingPokemonDetails2(true));
+        try {
+          //TODO: Fix the TS Rules
+          // @ts-ignore
+          await dispatch(fetchPokemonDetails2(selectedPokemon2.id));
+        } catch (error) {
+          console.error(
+            'Error fetching Pokemon details for second Pokemon:',
+            error,
+          );
+        } finally {
+          dispatch(setLoadingPokemonDetails2(false));
+        }
+      }
+    };
 
-    if (selectedPokemon1) {
-      dispatch(fetchPokemonDetails1(selectedPokemon1.id));
-      // fetchDetails1(selectedPokemon1);
-    }
-    if (selectedPokemon2) {
-      dispatch(fetchPokemonDetails2(selectedPokemon2.id));
-      // fetchDetails2(selectedPokemon2);
-    }
+    fetchData();
   }, [dispatch, selectedPokemon1, selectedPokemon2]);
 
-  const openDialog = () => {
-    setIsDialogOpen(true);
+  const openDialog1 = () => {
+    setIsDialog1Open(true);
+  };
+
+  const openDialog2 = () => {
+    setIsDialog2Open(true);
   };
 
   const closeDialog = () => {
-    setIsDialogOpen(false);
-  };
-
-  const selectPokemon = pokemon => {
-    if (!selectedPokemon1) {
-      dispatch(selectPokemon1(pokemon));
-    } else if (!selectedPokemon2) {
-      dispatch(selectPokemon2(pokemon));
-      closeDialog();
-    }
+    setIsDialog1Open(false);
+    setIsDialog2Open(false);
   };
 
   const clearSelection = () => {
     dispatch(clearSelectedComparePokemon());
-    setDetails1(null);
-    setDetails2(null);
   };
 
-  const renderPokemonItem = ({item}) => (
-    <TouchableOpacity onPress={() => selectPokemon(item)}>
-      <View>
-        <Text>{item.name}</Text>
-      </View>
-    </TouchableOpacity>
-  );
+  const getWinner = (
+    stat1: {base_stat: any; effort?: number; stat?: {name: string}},
+    stat2:
+      | {base_stat: number; effort: number; stat: {name: string}}
+      | undefined,
+  ) => {
+    //TODO: Fix the TS Rules
+    // @ts-ignore
+    if (stat1.base_stat > stat2.base_stat) {
+      //TODO: Fix the TS Rules
+      // @ts-ignore
+      return capitalizeAndSpace(selectedDetailPokemon1.name);
+      //TODO: Fix the TS Rules
+      // @ts-ignore
+    } else if (stat1.base_stat < stat2.base_stat) {
+      //TODO: Fix the TS Rules
+      // @ts-ignore
+      return capitalizeAndSpace(selectedDetailPokemon2.name);
+    } else {
+      return 'Draw';
+    }
+  };
 
   return (
-    <View>
-      {/* Selected Pokemon Component */}
-      <View>
-        <Text>Selected Pokemon 1:</Text>
-        {selectedPokemon1 && (
-          <View>
-            <Text>{selectedPokemon1.name}</Text>
-            {/* Add more details as needed */}
-          </View>
-        )}
-      </View>
-
-      <View>
-        <Text>Selected Pokemon 2:</Text>
-        {selectedPokemon2 && (
-          <View>
-            <Text>{selectedPokemon2.name}</Text>
-            {/* Add more details as needed */}
-          </View>
-        )}
-      </View>
-
-      {/* Chart of Comparison Component */}
-      {/* {details1 && details2 && (
-        <View>
-          <Text>Comparison Chart</Text>
-          <Text>
-            {details1.name}: {details1.height}, {details1.weight}
-          </Text>
-          <Text>
-            {details2.name}: {details2.height}, {details2.weight}
-          </Text>
-        </View>
-      )} */}
-
-      {selectedDetailPokemon1 && selectedDetailPokemon2 && (
-        <View>
-          <Text>Comparison Chart</Text>
-          <Text>
-            {selectedDetailPokemon1?.name}: {selectedDetailPokemon1?.height},{' '}
-            {selectedDetailPokemon1?.weight}
-          </Text>
-          <Text>
-            {selectedDetailPokemon2?.name}: {selectedDetailPokemon2?.height},{' '}
-            {selectedDetailPokemon2?.weight}
-          </Text>
-        </View>
-      )}
-
-      {/* Button to open the Pokemon List Dialog */}
-      <TouchableOpacity onPress={openDialog}>
-        <Text>Choose Pokemon</Text>
-      </TouchableOpacity>
-
-      {/* Clear Button */}
-      <Button title="Clear Selection" onPress={clearSelection} />
-
-      {/* Dialog of List Pokemon Component */}
-      <Modal visible={isDialogOpen} onRequestClose={closeDialog}>
-        <View>
-          <Text>Choose Pokemon</Text>
-          <FlatList
-            data={list}
-            keyExtractor={item => item.name}
-            renderItem={renderPokemonItem}
+    <SafeAreaView style={{flex: 1}}>
+      <ScrollView style={styles.container}>
+        <Header title="Let's Compare Pokemons !" />
+        <View style={styles.pokemonContainer}>
+          {renderPokemonSection(
+            'Pokemon 1',
+            selectedPokemon1,
+            selectedDetailPokemon1,
+            openDialog1,
+          )}
+          <ImageLoader
+            uri={require('../../assets/images/versus.png')}
+            imageStyle={styles.versus}
+            width={50}
+            height={40}
+            isSvg={false}
           />
-          <TouchableOpacity onPress={closeDialog}>
-            <Text>Close</Text>
-          </TouchableOpacity>
+          {renderPokemonSection(
+            'Pokemon 2',
+            selectedPokemon2,
+            selectedDetailPokemon2,
+            openDialog2,
+          )}
         </View>
-      </Modal>
+        {loadingPokemonDetails1 || loadingPokemonDetails2 ? (
+          <ActivityIndicator size="large" color={customTheme.orange} />
+        ) : selectedDetailPokemon1 && selectedDetailPokemon2 ? (
+          <View style={styles.comparisonChartContainer}>
+            <Text style={styles.comparisonChartTitle}>Comparison Chart</Text>
+            {selectedDetailPokemon1.stats.map(stat1 => {
+              const matchingStat2 = selectedDetailPokemon2.stats.find(
+                stat2 => stat2.stat.name === stat1.stat.name,
+              );
+
+              return (
+                <View key={stat1.stat.name} style={styles.chartItem}>
+                  <Text style={styles.chartTitle}>
+                    {capitalizeAndSpace(stat1.stat.name)}{' '}
+                    <Text style={styles.winnerText}>
+                      ( Winner: {getWinner(stat1, matchingStat2)} )
+                    </Text>
+                  </Text>
+                  {/* TODO: fix the TS rules */}
+                  <BarChart
+                    data={{
+                      labels: [
+                        selectedDetailPokemon1.name,
+                        selectedDetailPokemon2.name,
+                      ],
+                      datasets: [
+                        {
+                          data: [stat1.base_stat, matchingStat2.base_stat],
+                        },
+                      ],
+                    }}
+                    width={350}
+                    height={200}
+                    chartConfig={{
+                      backgroundColor: '#e26a00',
+                      backgroundGradientFrom: '#fb8c00',
+                      backgroundGradientTo: '#ffa726',
+                      decimalPlaces: 2,
+
+                      color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                      labelColor: (opacity = 1) =>
+                        `rgba(255, 255, 255, ${opacity})`,
+                      style: {
+                        borderRadius: 16,
+                      },
+                      propsForDots: {
+                        r: '6',
+                        strokeWidth: '2',
+                        stroke: '#ffa726',
+                      },
+                    }}
+                    showValuesOnTopOfBars={true}
+                    showBarTops={true}
+                    fromZero={true}
+                    withHorizontalLabels={true}
+                  />
+                </View>
+              );
+            })}
+          </View>
+        ) : (
+          <Text style={{textAlign: 'center'}}>
+            Please select both Pokemon for comparison
+          </Text>
+        )}
+
+        {loadingPokemonDetails1 || loadingPokemonDetails2 ? null : (
+          <View style={styles.clearSelectionButtonContainer}>
+            <Button title="Clear Selection" onPress={clearSelection} />
+          </View>
+        )}
+        {renderPokemonModal(
+          'Choose Pokemon 1',
+          isDialog1Open,
+          closeDialog,
+          dispatch,
+          selectPokemon1,
+        )}
+        {renderPokemonModal(
+          'Choose Pokemon 2',
+          isDialog2Open,
+          closeDialog,
+          dispatch,
+          selectPokemon2,
+        )}
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+const renderPokemonSection = (
+  title: string,
+  selectedPokemon: any,
+  selectedDetailPokemon: any,
+  openDialog: () => void,
+) => {
+  return (
+    <View style={styles.pokemon}>
+      <View style={styles.pokemonDetails}>
+        <Text style={styles.pokemonTitle}>{title}</Text>
+        {selectedPokemon == null ? (
+          <Placeholder width={100} height={100} />
+        ) : (
+          <View>
+            <ImageLoader
+              uri={selectedDetailPokemon?.sprites.front_default}
+              imageStyle={styles.pokemonImage}
+              width={100}
+              height={100}
+              isSvg={false}
+            />
+
+            <Text style={styles.pokemonDetailsName}>
+              {capitalizeAndSpace(selectedPokemon.name)}
+            </Text>
+          </View>
+        )}
+      </View>
+      <TouchableOpacity style={styles.chooseButton} onPress={openDialog}>
+        <Text style={styles.buttonText}>Choose {title}</Text>
+      </TouchableOpacity>
     </View>
+  );
+};
+
+const renderPokemonModal = (
+  modalTitle: string,
+  isOpen: boolean,
+  closeModal: () => void,
+  dispatch: any,
+  selectPokemon: (pokemon: any) => void,
+) => {
+  return (
+    <Modal visible={isOpen} onRequestClose={closeModal}>
+      <View style={styles.modalContainer}>
+        <Text style={styles.modalTitle}>{modalTitle}</Text>
+        <TouchableOpacity style={styles.modalCloseButton} onPress={closeModal}>
+          <Icon style={styles.modalCloseButtonText} name="close-circle" />
+        </TouchableOpacity>
+        <PokemonListComponent
+          customOnPress={selectedPokemon => {
+            dispatch(selectPokemon(selectedPokemon));
+            closeModal();
+          }}
+        />
+      </View>
+    </Modal>
   );
 };
 

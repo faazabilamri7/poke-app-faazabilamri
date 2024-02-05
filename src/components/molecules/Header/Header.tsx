@@ -1,7 +1,7 @@
-// Header.tsx
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text} from 'react-native';
 import styles from './styles';
+import ImageLoader from '../../atoms/ImageLoader/ImageLoader';
 
 interface HeaderProps {
   title: string;
@@ -10,11 +10,14 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({title}) => {
   return (
     <View style={styles.container}>
-      <Image
-        source={require('../../../assets/images/pokeball.png')}
-        style={styles.logo}
+      <ImageLoader
+        uri={require('../../../assets/images/pokeball.png')}
+        imageStyle={styles.logo}
+        width={40}
+        height={40}
+        isSvg={false}
       />
-      <Text style={styles.title}>PokeApp - {title}</Text>
+      <Text style={styles.title}>{title}</Text>
     </View>
   );
 };

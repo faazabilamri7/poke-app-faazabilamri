@@ -10,6 +10,8 @@ interface PokemonState {
   selectedPokemon2: PokemonList | null;
   selectedDetailPokemon1: PokemonDetail | null;
   selectedDetailPokemon2: PokemonDetail | null;
+  loadingPokemonDetails1: boolean;
+  loadingPokemonDetails2: boolean;
 }
 
 const initialState: PokemonState = {
@@ -19,6 +21,8 @@ const initialState: PokemonState = {
   selectedPokemon2: null,
   selectedDetailPokemon1: null,
   selectedDetailPokemon2: null,
+  loadingPokemonDetails1: false,
+  loadingPokemonDetails2: false,
 };
 
 const pokemonSlice = createSlice({
@@ -27,7 +31,6 @@ const pokemonSlice = createSlice({
   reducers: {
     setPokemonList: (state, action: PayloadAction<Array<any>>) => {
       const uniqueKeys = new Set(state.list.map(item => item.id));
-
       state.list = [
         ...state.list,
         ...action.payload.filter(item => !uniqueKeys.has(item.id)),
@@ -54,6 +57,14 @@ const pokemonSlice = createSlice({
     clearSelectedComparePokemon: state => {
       state.selectedPokemon1 = null;
       state.selectedPokemon2 = null;
+      state.selectedDetailPokemon1 = null;
+      state.selectedDetailPokemon2 = null;
+    },
+    setLoadingPokemonDetails1: (state, action: PayloadAction<boolean>) => {
+      state.loadingPokemonDetails1 = action.payload;
+    },
+    setLoadingPokemonDetails2: (state, action: PayloadAction<boolean>) => {
+      state.loadingPokemonDetails2 = action.payload;
     },
   },
 });
@@ -67,6 +78,8 @@ export const {
   selectPokemon2,
   selectDetailPokemon2,
   clearSelectedComparePokemon,
+  setLoadingPokemonDetails1,
+  setLoadingPokemonDetails2,
 } = pokemonSlice.actions;
 
 export const fetchPokemonList =
@@ -83,8 +96,6 @@ export const fetchPokemonDetails =
   (id: number) => async (dispatch: AppDispatch) => {
     try {
       const data = await getPokemonDetails(id);
-
-      // Make sure 'selectPokemon' receives the correct payload structure
       dispatch(detailPokemon(data));
     } catch (error) {
       console.error('Error fetching Pokemon details:', error);
@@ -94,30 +105,29 @@ export const fetchPokemonDetails =
 export const fetchPokemonDetails1 =
   (id: number) => async (dispatch: AppDispatch) => {
     try {
+      dispatch(setLoadingPokemonDetails1(true));
       const data = await getPokemonDetails(id);
-
-      // Make sure 'selectPokemon' receives the correct payload structure
       dispatch(selectDetailPokemon1(data));
     } catch (error) {
-      console.error(
-        'Error fetching Pokemon details for first Pokemon :',
-        error,
-      );
+      console.error('Error fetching Pokemon details for first Pokemon:', error);
+    } finally {
+      dispatch(setLoadingPokemonDetails1(false));
     }
   };
 
 export const fetchPokemonDetails2 =
   (id: number) => async (dispatch: AppDispatch) => {
     try {
+      dispatch(setLoadingPokemonDetails2(true));
       const data = await getPokemonDetails(id);
-
-      // Make sure 'selectPokemon' receives the correct payload structure
       dispatch(selectDetailPokemon2(data));
     } catch (error) {
       console.error(
-        'Error fetching Pokemon details for second Pokemon :',
+        'Error fetching Pokemon details for second Pokemon:',
         error,
       );
+    } finally {
+      dispatch(setLoadingPokemonDetails2(false));
     }
   };
 

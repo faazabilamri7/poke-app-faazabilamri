@@ -1,8 +1,9 @@
 import axios from 'axios';
 import {PokemonAbility, PokemonDetail, PokemonList} from '../types/Pokemon';
+import config from '../config/config';
 
 const api = axios.create({
-  baseURL: 'https://pokeapi.co/api/v2/',
+  baseURL: `${config.apiBaseUrl}/${config.apiVersion}`,
 });
 
 export const getPokemonList = async (limit: number, offset: number) => {
@@ -41,7 +42,6 @@ export const getAbilityDetails = async (name: string) => {
   return response.data as PokemonAbility;
 };
 
-// hilangkan
 export const getPokemonImage = (pokemonIndex: number) => {
   return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
 };

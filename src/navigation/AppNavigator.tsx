@@ -2,10 +2,9 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomePage from '../screens/HomePage/HomePage';
-import DetailPokemonPage from '../screens/DetailPage/DetailPage';
-import ComparePokemonPage from '../screens/ComparePage/ComparePage';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {customTheme} from '../theme/customTheme';
+import {DetailPokemonPage, HomePage, ComparePage} from '../screens';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,21 +33,45 @@ const AppNavigator: React.FC = () => {
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
+          tabBarStyle: {
+            backgroundColor: customTheme.white,
+            paddingTop: 7,
+            borderTopLeftRadius: 24,
+            borderTopRightRadius: 24,
+            borderLeftWidth: 0.2,
+            borderRightWidth: 0.2,
+            position: 'absolute',
+            overflow: 'hidden',
+          },
         }}>
         <Tab.Screen
           name="HomeTab"
           component={HomeTab}
           options={{
+            //TODO : fix the TS rules
             tabBarIcon: ({size, focused}) => (
               <Icon
                 name="home-outline"
-                color={focused ? 'red' : 'gray'}
+                color={focused ? customTheme.orange : 'gray'}
                 size={size}
               />
             ),
           }}
         />
-        <Tab.Screen name="Compare" component={ComparePokemonPage} />
+        <Tab.Screen
+          name="Compare"
+          component={ComparePage}
+          options={{
+            //TODO : fix the TS rules
+            tabBarIcon: ({size, focused}) => (
+              <Icon
+                name="podium-outline"
+                color={focused ? customTheme.orange : 'gray'}
+                size={size}
+              />
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );

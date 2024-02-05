@@ -5,7 +5,8 @@ import {customTheme} from '../../../theme/customTheme';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    borderRadius: 25,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
   },
   listContainer: {
     padding: 16,
@@ -23,8 +24,6 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   pokemonImage: {
-    width: 50,
-    height: 50,
     marginRight: 16,
     borderRadius: 25,
   },
